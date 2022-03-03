@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter_clock_theme/models/my_theme_provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clock_theme/constants.dart';
 import 'package:flutter_clock_theme/screens/components/clock_painter.dart';
 import 'package:flutter_clock_theme/size_config.dart';
+import "package:provider/provider.dart";
 
 class Clock extends StatefulWidget {
   Clock({Key? key}) : super(key: key);
@@ -57,12 +60,24 @@ class _ClockState extends State<Clock> {
             ),
           ),
         ),
-        // Positioned(
-        //   top: 50,
-        //   left: 0,
-        //   right: 0,
-        //   child: SvgPicture.asset(""),
-        // )
+        Positioned(
+          top: 30,
+          left: 0,
+          right: 0,
+          child: Consumer<MyThemeModel>(
+            builder: (context, theme, child) => InkWell(
+              onTap: () => theme.changeTheme(),
+              child: SvgPicture.asset(
+                theme.isLightTheme
+                    ? "assets/icons/sun.svg"
+                    : "assets/icons/moon.svg",
+                height: 24,
+                width: 24,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
