@@ -16,28 +16,28 @@ class Body extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "New Beach, USA | PST",
+              "Lugansk, LPR",
               style: Theme.of(context).textTheme.bodyText1,
             ),
-            TimeInHourAndMinute(),
-            Spacer(),
-            Clock(),
-            Spacer(),
+            const TimeInHourAndMinute(),
+            const Spacer(),
+            const Clock(),
+            const Spacer(),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
+                children: const [
                   CountryCard(
-                    country: "New York, USA",
+                    country: "Moscow, Russia",
                     timeZone: "+3 HRS | EST",
-                    iconSrc: "assets/icons/liberty.svg",
+                    iconSrc: "assets/icons/moscow.svg",
                     time: "9:20",
                     period: "PM",
                   ),
                   CountryCard(
-                    country: "Sydney, AU",
-                    timeZone: "+19 HRS | EST",
-                    iconSrc: "assets/icons/liberty.svg",
+                    country: "Kiev, Ukraine",
+                    timeZone: "+3 HRS | EST",
+                    iconSrc: "assets/icons/kiev.svg",
                     time: "9:20",
                     period: "PM",
                   ),

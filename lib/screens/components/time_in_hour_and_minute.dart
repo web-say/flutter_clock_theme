@@ -3,20 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clock_theme/size_config.dart';
 
 class TimeInHourAndMinute extends StatefulWidget {
+  const TimeInHourAndMinute({Key? key}) : super(key: key);
+
   @override
   _TimeInHourAndMinuteState createState() => _TimeInHourAndMinuteState();
 }
 
 class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
-  TimeOfDay _timeOfDay = TimeOfDay.now();
+  TimeOfDay _timeOfDay =
+      TimeOfDay.fromDateTime(DateTime.now().add(const Duration(hours: 3)));
 
   @override
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_timeOfDay.minute != TimeOfDay.now().minute) {
         setState(() {
-          _timeOfDay = TimeOfDay.now();
+          _timeOfDay = TimeOfDay.fromDateTime(
+              DateTime.now().add(const Duration(hours: 3)));
         });
       }
     });
@@ -29,7 +33,7 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "${_timeOfDay.hourOfPeriod}:${_timeOfDay.minute}",
+          "${_timeOfDay.hour}:${_timeOfDay.minute}",
           style: Theme.of(context).textTheme.headline1,
         ),
         const SizedBox(

@@ -40,9 +40,9 @@ class CountryCard extends StatelessWidget {
                     fontSize: getProportionateScreenWidth(16),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(timeZone),
-                Spacer(),
+                const Spacer(),
                 Row(
                   children: [
                     SvgPicture.asset(
@@ -50,7 +50,7 @@ class CountryCard extends StatelessWidget {
                       width: getProportionateScreenWidth(40),
                       color: Theme.of(context).primaryIconTheme.color,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       time,
                       style: Theme.of(context).textTheme.headline4,

@@ -27,7 +27,7 @@ ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
     appBarTheme: appBarTheme,
     primaryColor: kPrimaryColor,
-    scaffoldBackgroundColor: Color(0xFF0D0C0E),
+    scaffoldBackgroundColor: const Color(0xFF0D0C0E),
     backgroundColor: kBackgroundDarkColor,
     iconTheme: const IconThemeData(color: kBodyTextColorDark),
     primaryIconTheme: const IconThemeData(color: kPrimaryIconDarkColor),

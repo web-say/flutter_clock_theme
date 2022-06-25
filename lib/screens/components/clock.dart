@@ -10,21 +10,21 @@ import 'package:flutter_clock_theme/size_config.dart';
 import "package:provider/provider.dart";
 
 class Clock extends StatefulWidget {
-  Clock({Key? key}) : super(key: key);
+  const Clock({Key? key}) : super(key: key);
 
   @override
   _ClockState createState() => _ClockState();
 }
 
 class _ClockState extends State<Clock> {
-  DateTime _dateTime = DateTime.now();
+  DateTime _dateTime = DateTime.now().toUtc().add(const Duration(hours: 3));
 
   @override
   void initState() {
     super.initState();
     Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
-        _dateTime = DateTime.now();
+        _dateTime = DateTime.now().toUtc().add(const Duration(hours: 3));
       });
     });
   }
